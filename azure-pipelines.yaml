@@ -5,11 +5,11 @@ trigger:
 
 variables:
   acrConnection: 'ifaa-fraud-connection'
-  azureSubscription: 'azure-ifaa-connection'
+  azureSubscription: 'azure Subscription 1'
   imageRepository: 'ifaa-fraud-agent'
-  containerRegistry: 'fraudagent'
+  containerRegistry: 'ifaarg'
   aksResourceGroup: 'rg-ifaa-fraud'
-  aksClusterName: 'aks-nodepool'
+  aksClusterName: 'aks-nodepool1-32336790-vmss000000'
   imageTag: '$(Build.BuildId)'
 
 stages:
@@ -28,7 +28,7 @@ stages:
         command: buildAndPush
         repository: '$(imageRepository)'
         dockerfile: '**/Dockerfile'
-        containerRegistry: '$(acrConnection)'
+        containerRegistry: 'ifaa-acr-connection'
         tags: |
           $(imageTag)
           latest
