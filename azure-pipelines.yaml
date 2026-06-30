@@ -4,12 +4,12 @@ trigger:
       - main
 
 variables:
-  acrConnection: 'acr-ifaa-connection'
+  acrConnection: 'ifaa-fraud-connection'
   azureSubscription: 'azure-ifaa-connection'
-  imageRepository: 'ifaa'
-  containerRegistry: 'ifaaacr.azurecr.io'
-  aksResourceGroup: 'rg-ifaa-prod'
-  aksClusterName: 'aks-ifaa-prod'
+  imageRepository: 'ifaa-fraud-agent'
+  containerRegistry: 'fraudagent'
+  aksResourceGroup: 'rg-ifaa-fraud'
+  aksClusterName: 'aks-nodepool'
   imageTag: '$(Build.BuildId)'
 
 stages:
